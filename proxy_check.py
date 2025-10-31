@@ -93,7 +93,7 @@ def clean_exe_temp(folder):
 def load_proxy():
     proxies = []
     
-    filename = 'Proxies.txt'
+    filename = 'proxies.txt'
 
     if not os.path.isfile(filename) or not filename.endswith('.txt'):
         filename = f'{filename}.txt'
