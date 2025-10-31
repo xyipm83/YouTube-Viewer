@@ -92,11 +92,10 @@ def clean_exe_temp(folder):
 
 def load_proxy():
     proxies = []
+    
+    filename = 'Proxies.txt'
 
-    filename = input(bcolors.OKBLUE +
-                     'Enter your proxy file name: ' + bcolors.ENDC)
-
-    if not os.path.isfile(filename) and filename[-4:] != '.txt':
+    if not os.path.isfile(filename) or not filename.endswith('.txt'):
         filename = f'{filename}.txt'
 
     try:
@@ -205,11 +204,8 @@ if __name__ == '__main__':
     clean_exe_temp(folder='proxy_check')
     backup()
 
-    try:
-        threads = int(
-            input(bcolors.OKBLUE+'Threads (recommended = 100): ' + bcolors.ENDC))
-    except Exception:
-        threads = 100
+    # def=100
+    threads = 100
 
     proxy_list = load_proxy()
     # removing empty & duplicate proxies
